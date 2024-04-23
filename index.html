@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/index.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/d99dbbcd48.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <title>Document</title>
+
+    <style>
+        .fade-in {
+            animation: fadeIn ease 1s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="bg-white-600 text-white">
+        <!-- Top bar starts -->
+        <div class="bg-white shadow-md">
+            <div class="mx-auto px-16 py-2 flex justify-between items-center">
+                <!-- Slider Left Control -->
+                <button id="prevBtn" class="text-blue-800 focus:outline-none">
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+                <!-- Text Content -->
+                <p id="quote" class="text-xs sm:text-sm md:text-base text-center flex-auto text-black"></p>
+                <!-- Slider Right Control -->
+                <button id="nextBtn" class="text-blue-800 focus:outline-none">
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="bg-blue-600 py-6 px-16 flex items-center justify-between">
+            <!-- Logo on the left -->
+            <div class="w-1/4 flex items-center">
+                <img src="images/logo.png" alt="Essence Logo" class="h-6 sm:h-9" />
+            </div>
+
+            <!-- Search bar in the middle -->
+            <div class="w-1/2 flex justify-center">
+                <div class="relative w-full">
+                    <i
+                        class="fa-solid fa-magnifying-glass absolute left-3 border-r border-gray-400 pr-6 top-1/2 transform -translate-y-1/2 text-gray-600 h-5 w-5"></i>
+                    <input type="search" placeholder="Search"
+                        class="w-full pl-10 pr-3 py-2 rounded-full outline-none text-gray-800 bg-white" />
+                </div>
+            </div>
+
+            <!-- Sign in and Cart on the right -->
+            <div class="w-1/4 flex justify-end space-x-4">
+                <a href="#" class="flex items-center hover:text-gray-300">
+                    <span class="pr-1">Sign In</span> <i class="fa-solid fa-user"></i>
+                </a>
+                <a href="#" class="flex items-center hover:text-gray-300">
+                    <span class="pr-1">Cart</span>
+                    <i class="fa-solid fa-shopping-cart"></i>
+                </a>
+            </div>
+        </div>
+
+        <nav class="bg-white p-4">
+            <div class="container mx-auto px-10">
+                <ul class="flex justify-evenly">
+                    <li class="text-sky-800 cursor-pointer">Brands</li>
+                    <li class="text-sky-800 cursor-pointer">Brands</li>
+                    <li class="text-sky-800 cursor-pointer">Vendors</li>
+                    <li class="text-sky-800 cursor-pointer">Trendy</li>
+                    <li class="text-sky-800 cursor-pointer">Events</li>
+                    <li class="text-sky-800 cursor-pointer">Events</li>
+                    <li class="text-sky-800 cursor-pointer">Events</li>
+                    <li class="text-sky-800 cursor-pointer">Events</li>
+                    <li class="text-sky-800 cursor-pointer">Events</li>
+                    <li class="text-sky-800 cursor-pointer">Events</li>
+                    <li class="text-sky-800 cursor-pointer">Events</li>
+                    <li class="text-sky-800 cursor-pointer">Events</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container mx-auto px-6 py-4">
+            <!-- Flex container -->
+            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                <!-- First column for categories -->
+                <div class="flex-auto bg-white p-4 rounded-lg md:w-1/5">
+                    <ul id="category-list" class="space-y-2">
+                        <!-- Categories will be inserted here by JavaScript -->
+                    </ul>
+                </div>
+
+                <!-- Second column for feature area -->
+                <div class="flex-auto bg-white rounded-lg shadow md:w-1/2">
+                    <div class="container mx-auto">
+                        <div
+                            class="bg-gray-200 rounded-lg mb-4 relative inset-x-0 bg-gradient-to-t from-gray-900 to-transparent">
+                            <div class="slider">
+                                <div class="absolute bottom-16 left-3 p-4">
+                                    <button
+                                        class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded shadow mt-2">
+                                        Buy Now (5% off)
+                                    </button>
+                                </div>
+
+                                <div>
+                                    <!-- <img id="slider"  src="images/954.jpg" alt="Kitchen Savings" class="slide object-cover w-full"> -->
+                                    <img id="sliderImage" src="images/954.jpg" alt="Kitchen Savings"
+                                        class="slide object-cover w-full rounded-lg fade-in" />
+                                </div>
+
+                                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 space-x-2 flex"
+                                    id="sliderIndicators">
+                                    <span class="indicator h-3 w-3 bg-white rounded-full"></span>
+                                    <span class="indicator h-3 w-3 bg-white rounded-full"></span>
+                                    <span class="indicator h-3 w-3 bg-white rounded-full"></span>
+                                    <span class="indicator h-3 w-3 bg-white rounded-full"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Brand slider area (row 2) -->
+                        <div class="h-1/4 bg-gray-100 p-4 rounded-lg">
+                            <div class="relative flex items-center" id="carousel">
+                                <!-- Left arrow for navigation -->
+                                <button id="prevArrow" class="absolute left-0 z-10 p-2 bg-white rounded-full shadow-md">
+                                    <i class="fa-solid fa-angle-left"></i>
+                                </button>
+
+                                <!-- Carousel container -->
+
+                                <div class="carousel relative overflow-hidden w-full" id="carousel" role="region"
+                                    aria-label="Logo Carousel">
+                                    <div class="carousel-container whitespace-nowrap flex" id="carouselContainer"
+                                        role="list">
+                                        <!-- <div class="inline-block carousel-item px-4" style="width: calc(100% / var(--items-per-page));">
+                                        <div class="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center mx-auto">
+                                        
+                                          <img id="brandImage" src="images/Gondar.png" alt="logo" class="object-cover w-12 h-12 rounded-lg" />
+                                        </div>
+                                        <p class="text-xs text-center mt-2">Brand Name</p>
+                                      </div> -->
+                                    </div>
+                                </div>
+
+                                <!-- Right arrow for navigation -->
+                                <button id="nextArrow"
+                                    class="absolute right-0 z-10 p-2 bg-white rounded-full shadow-md">
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third column for promotional offer -->
+                <div class="flex-auto bg-white shadow md:w-1/4 hidden md:block">
+                    <div class="bg-white p-4">
+                        <h2 class="text-gray-700 mb-6 text-xl font-semibold">
+                            Good Afternoon, John Smith
+                        </h2>
+                        <p class="text-3xl text-center font-bold mt-2">
+                            Flash Sale for You!
+                        </p>
+                        <div class="text-9xl text-center font-bold text-indigo-600 mt-2">
+                            40<span class="text-2xl">% off</span>
+                        </div>
+                        <p class="mt-4 text-center text-gray-500">
+                            After 12 hr this offer will be end.
+                            <a href="#" class="text-indigo-600 hover:underline">Get Now</a>
+                        </p>
+                        <img src="images/cooking-ingredients-and-a-smartphone-on-the-table-12674107.png"
+                            alt="Sale Product" class="mt-4 mb-4 w-full h-64 object-cover" />
+                        <button class="bg-blue-500 text-white w-full py-3 mt-4 hover:bg-blue-600">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div></div>
+            </div>
+
+            <div class="bg-gray-100 py-4">
+                <div class="flex justify-between items-center flex-wrap">
+                    <!-- Item 1 -->
+                    <div class="flex bg-white items-center p-2 pr-32">
+                        <img src="images/right.png" alt="Icon 1" class="w-6 h-6 mb-2" />
+                        <div>
+                            <h3 class="text-sm font-semibold">Quick & Easy Store Pickup</h3>
+                            <p class="text-xs text-gray-600">
+                                Get your order as little as 1hr
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex bg-white items-center p-2 pr-32">
+                        <img src="images/right.png" alt="Icon 2" class="w-6 h-6 mb-2" />
+                        <div>
+                            <h3 class="text-sm font-semibold">Low Price Guarantee</h3>
+                            <p class="text-xs text-gray-600">We won't be beat on price</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex bg-white items-center p-2 pr-32">
+                        <img src="images/right.png" alt="Icon 3" class="w-6 h-6 mb-2" />
+                        <div>
+                            <h3 class="text-sm font-semibold">Knowledgeable Advice</h3>
+                            <p class="text-xs text-gray-600">
+                                Answer to your tech questions
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="flex bg-white items-center p-2 pr-32">
+                        <img src="images/right.png" alt="Icon 4" class="w-6 h-6 mb-2" />
+                        <div>
+                            <h3 class="text-sm font-semibold">Latest & Greatest Tech</h3>
+                            <p class="text-xs text-gray-600">
+                                Discover what's new & exciting
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- javascript link -->
+    <script src="js/script.js"></script>
+    
+</body>
+
+</html>
