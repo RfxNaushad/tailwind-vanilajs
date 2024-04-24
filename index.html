@@ -147,9 +147,7 @@
                                 <div class="carousel relative overflow-hidden w-full" id="carousel" role="region"
                                     aria-label="Logo Carousel">
                                     <div class="carousel-container whitespace-nowrap flex" id="carouselContainer"
-                                        role="list">
-                                        
-                                    </div>
+                                        role="list"></div>
                                 </div>
 
                                 <!-- Right arrow for navigation -->
@@ -185,13 +183,7 @@
                         </button>
                     </div>
                 </div>
-
-                
             </div>
-
-
-
-            
 
             <div class="backgroud_gray py-8">
                 <div class="flex justify-between items-center flex-wrap">
@@ -241,87 +233,147 @@
 
 
 
+
             <!-- shop by department area -->
-            <div class="backgroud_gray py-12">
+            <div class="backgroud_gray py-12 ">
                 <h2 class="text-start text-2xl mb-6">Shop by Department</h2>
-                
+
                 <!-- First Row -->
-                <div class="grid grid-cols-6 gap-4 mb-4">
-                  <!-- Repeat this div for each item in the first row -->
-                  <div class="flex flex-col items-center">
-                    <img class="shop-dept-img" src="" alt="Department Image 1">
-                    <p class="text-sm">Food</p>
-                  </div>
-                  <!-- ... other items for the first row -->
+                <div id="shop-grid" class="grid grid-cols-6 gap-4 mb-8">
+                    <!-- Items will be appended directly inside this container -->
                 </div>
-                
+
                 <!-- Second Row -->
-                <div class="grid grid-cols-6 gap-4">
-                  <!-- Repeat this div for each item in the second row -->
-                  <div class="flex flex-col items-center">
-                    <img src="images/shop_department/shop_9.png" alt="Product 2" class="object-cover h-32 w-32 mb-2 rounded-md"/>
-                    <p class="text-sm">Minimal</p>
-                  </div>
-                  <!-- ... other items for the second row -->
+                <div id="shop-grid2" class="grid grid-cols-6 gap-4 mb-8">
+                    <!-- Items will be appended directly inside this container -->
                 </div>
-              </div>
+            </div>
 
+
+
+            
             <!-- deal of the day -->
-            <div class="bg-blue-100 p-6">
-                <h2 class="text-lg font-semibold mb-4">Deal of The Day</h2>
-                
-                <div class="grid md:grid-cols-2 gap-4 mb-4">
-                  <!-- Product Column 1 -->
-                  <div class="bg-white rounded shadow p-4 flex flex-col justify-between">
-                    <img src="images/deal_of_the_day/image 44.png" alt="Wireless Bluetooth Headset" class="mb-3"/>
-                    <h3 class="text-md font-semibold">Wireless Bluetooth Headset Single Ear</h3>
-                    <!-- Rating Stars -->
-                    <div class="text-yellow-400 text-sm my-1">
-                      <!-- SVGs or Icons for stars -->
+    
+            <div class="backgroud_gray p-6">
+                <div class="flex justify-between items-center pb-2">
+                  <h2 class="text-2xl font-semibold text-gray-800">Deal of The Day</h2>
+                  <a href="#" class="text-lg font-bold transition duration-300 ease-in-out">See more items ></a>
+                </div>
+              
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                  <!-- Product 1 -->
+                  <div class="border flex overflow-hidden p-4 bg-white">
+                    <img class="w-full " src="images/deal_of_the_day/image 44.png" alt="Wireless Bluetooth Headset">
+                    <div class="max-w-sm content-center rounded overflow-hidden  bg-white px-4">
+                        <h3 class="text-lg font-semibold truncate mb-1">Wireless Bluetooth Headset Single<br> Ear Earplugs Ultra...</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="text-yellow-400 text-xl mr-1">★★★★☆</div>
+                            <div class="text-gray-600 text-xs ml-1">4.5 (121)</div>
+                        </div>
+                        <div class="flex items-baseline mb-4">
+                            <span class="text-2xl font-bold">$6</span>
+                            <span class="text-sm line-through ml-2">$16</span>
+                            <span class="text-xs font-semibold ml-1">-50%</span>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</p>
+                        <div class="flex py-2 px-9 items-center justify-between mt-6 bg-neutral-100 ">
+                            <button class=" ">
+                                <i class="fa-solid fa-eye"></i>
+                                Preview
+                            </button>
+                            <button class="  ">
+                                <i class="fa-solid fa-table-columns"></i>
+                                Compare
+                            </button>
+                        </div>
+                        <button class="w-full bg-sky-800 text-white py-2 px-4 mt-8">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Add to Cart
+                        </button>
                     </div>
-                    <p class="text-gray-600 text-sm mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</p>
-                    <div class="flex items-center justify-between">
-                      <div>
-                        <span class="text-lg font-bold">$6</span>
-                        <span class="text-sm line-through text-gray-500 ml-1">$12</span>
+                    
+                  </div>
+              
+                  <!-- Product 2 with countdown timer -->
+                  <div class="border flex overflow-hidden relative p-4 bg-white">
+                    <!-- Placeholder for countdown timer -->
+                    <div class="absolute right-96 top-64 bg-red-600 text-white py-1 px-3 rounded-full text-xs">
+                      08 Days 23 Hours 55 Minutes 05 Seconds
+                    </div>
+                    <img class="w-full" src="images/deal_of_the_day/image 45.png" alt="Wireless Bluetooth Headset">
+
+                    <div class="max-w-sm content-center rounded overflow-hidden bg-white px-4">
+                        <h3 class="text-lg font-semibold truncate mb-1">Wireless Bluetooth Headset Single<br> Ear Earplugs Ultra...</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="text-yellow-400 text-xl mr-1">★★★★☆</div>
+                            <div class="text-gray-600 text-xs ml-1">4.5 (121)</div>
+                        </div>
+                        <div class="flex items-baseline mb-4">
+                            <span class="text-2xl  font-bold">$6</span>
+                            <span class="text-sm  line-through ml-2">$16</span>
+                            <span class="text-xs font-semibold ml-1">-50%</span>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</p>
+                        <div class="flex py-2 px-9 items-center justify-between mt-6 bg-neutral-100">
+                            <button class=" ">
+                                <i class="fa-solid fa-eye"></i>
+                                Preview
+                            </button>
+                            <button class="">
+                                <i class="fa-solid fa-table-columns"></i>
+                                Compare
+                            </button>
+                        </div>
+                        <button class="w-full bg-sky-800 text-white py-2 px-4 mt-8">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                    
+                  </div>
+                </div>
+
+
+
+
+
+
+                <!-- deal of second section -->
+                <div class="flex justify-center items-center mt-6">
+                    <div class="grid grid-cols-2 gap-4 ">
+                      <!-- First Column -->
+                      <div class="flex flex-col items-center justify-center bg-white">
+                        <img src="images/deal_of_the_day/image 42.png" alt="Wooden Sofa Aqua" class="w-full h-auto">
                       </div>
-                      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add to Cart</button>
+                      
+                      <!-- Second Column -->
+                      <div class="flex flex-col items-center justify-center bg-white">
+                        <img src="images/deal_of_the_day/image 43.png" alt="Wooden Sofa Aqua" class="w-full h-auto">
+                      </div>
                     </div>
                   </div>
                   
-                  <!-- Timer Column 2 -->
-                  <div class="bg-white rounded shadow p-4 flex items-center justify-center">
-                    <!-- Timer Content Here -->
-                    <div>
-                      <!-- Add Timer Here -->
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-4">
-                  <!-- Product Column 1 -->
-                  <div class="bg-white rounded shadow p-4">
-                    <img src="path-to-sofa-image.jpg" alt="Wooden Sofa Aqua" class="w-full mb-3"/>
-                    <h3 class="text-md font-semibold mb-1">Wooden Sofa Aqua</h3>
-                    <p class="text-gray-600 text-sm mb-3">1-year warranty</p>
-                    <p class="text-lg font-bold">$279.99</p>
-                  </div>
-                  
-                  <!-- Product Column 2 -->
-                  <!-- Duplicate the product column for the second product -->
-                </div>
-                
               </div>
-        
 
+              
 
+              <!-- on selling products -->
+              <div class="backgroud_gray py-8">
+                <div class="container mx-auto px-6">
+                  <h2 class="text-2xl font-semibold text-center text-gray-800 mb-8">On Selling Products</h2>
+                  <div id="selling-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
+                    <!-- Start of a Single Product Column -->
+                    
 
+                  </div>
+                </div>
+              </div>
+              
         </div>
     </main>
 
     <!-- javascript link -->
     <script src="js/script.js"></script>
-    
 </body>
 
 </html>

@@ -169,60 +169,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // shop by department
-// const images1 = [
-//   'images/shop_department/shop',
-//   'images/shop_department/shop_2',
-//   'images/shop_department/shop_3',
-//   'images/shop_department/shop_4',
-//   'images/shop_department/shop_5',
-//   'images/shop_department/shop_6',
-//   'images/shop_department/shop_7',
-//   'images/shop_department/shop_8',
-//   'images/shop_department/shop_9',
-//   'images/shop_department/shop_10',
-//   'images/shop_department/shop_11',
-//   'images/shop_department/shop_13'
-// ];
 
-// let imgIndex = 0;
-// const imgSrc = document.getElementById('shop_dept');
+// first row
+const shopImg = [
+  { name: "images/shop_department/shop.png", icon: "Food" },
+  { name: "images/shop_department/shop_2.png", icon: "Interior" },
+  { name: "images/shop_department/shop_3.png", icon: "Art" },
+  { name: "images/shop_department/shop_4.png", icon: "Plant" },
+  { name: "images/shop_department/shop_5.png", icon: "Colorful" },
+  { name: "images/shop_department/shop_6.png", icon: "Architecture" }
+];
 
-// function startSlider(){
-//   setInterval( ()=>{
-//       if (imgIndex >= images.length) {
-//           imgIndex = 0;
-//       }
-//       const imgUrl = images[imgIndex];
-//       imgSrc.setAttribute('src', imgUrl);
-//       imgIndex++; 
-//   }, 1000);
+const shopGrid = document.getElementById('shop-grid');
+shopImg.forEach(img => {
+  const div = document.createElement('div');
+  div.className = "flex flex-col items-center"; // Keeps your styling consistent
+  div.innerHTML = `<img class="w-60 h-52" src="${img.name}" alt="${img.icon}"/>
+  <p class="mt-4">${img.icon}</p>`;
+  shopGrid.appendChild(div);
+});
 
-// };
+// second row
+const shopImg2 = [
+  { name: "images/shop_department/shop_7.png", icon: "Minimal" },
+  { name: "images/shop_department/shop_8.png", icon: "Technology" },
+  { name: "images/shop_department/shop_9.png", icon: "Animal" },
+  { name: "images/shop_department/shop_10.png", icon: "Nature" },
+  { name: "images/shop_department/shop_11.png", icon: "Texture" },
+  { name: "images/shop_department/shop_13.png", icon: "Portrait" }
+];
 
-// function stopSlider(){
-//   location.reload();
-//   imgSrc.setAttribute('src', 'images/shop_department/shop')
-// }
+const shopGrid2 = document.getElementById('shop-grid2');
+shopImg2.forEach(img => {
+  const div2 = document.createElement('div');
+  div2.className = "flex flex-col items-center"; // Keeps your styling consistent
+  div2.innerHTML = `<img class="w-60 h-52" src="${img.name}" alt="${img.icon}"/>
+  <p class="mt-4">${img.icon}</p>`;
+  shopGrid2.appendChild(div2);
+});
 
-document.addEventListener('DOMContentLoaded', () => {
-  const images1 = [
-    'images/shop_department/shop_1.jpg',
-    'images/shop_department/shop_2.jpg',
-    'images/shop_department/shop_3.jpg',
-    'images/shop_department/shop_4.jpg',
-    'images/shop_department/shop_5.jpg',
-    'images/shop_department/shop_6.jpg',
-    // ... other images
-  ];
 
-  // Assuming you have exactly as many img elements with class 'shop-dept-img' as there are images in the images1 array
-  const imgElements = document.querySelectorAll('.shop-dept-img');
+// on selling product
+const shopImg3 = [
+  { name: "images/on_selling/5.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/shop_department/shop_8.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/on_selling/4.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/on_selling/6.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/on_selling/3.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/shop_department/shop_13.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/on_selling/1.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/on_selling/2.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/on_selling/6.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" }
+];
 
-  // Assign an image from the array to each img element
-  imgElements.forEach((img, index) => {
-    // Make sure the index is within the bounds of the images1 array
-    if (index < images1.length) {
-      img.setAttribute('src', images1[index]);
-    }
-  });
+const shopGrid3 = document.getElementById('selling-grid');
+
+shopImg3.forEach(product => {
+  const productDiv = document.createElement('div');
+  productDiv.className = "bg-white overflow-hidden";
+  productDiv.innerHTML = `
+    <div class="flex flex-col md:flex-row">
+      <!-- Image Column -->
+      <div class="flex-2">
+        <img class="object-cover object-center w-full h-full" src="${product.name}" alt="Product Image">
+      </div>
+      <!-- Content Column -->
+      <div class="flex-3 p-4 content-center flex flex-col">
+        <div>
+          <h3 class="text-lg font-semibold">${product.title}</h3>
+          <p class="text-sm text-gray-600">${product.description}</p>
+        </div>
+        <div class="mt-2 md:mt-0">
+          <div class="flex items-baseline">
+            <span class="text-lg font-bold">${product.price}</span>
+            <span class="text-sm line-through ml-2">${product.originalPrice}</span>
+            <span class="text-sm font-semibold ml-1">${product.discount}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  shopGrid3.appendChild(productDiv);
 });
