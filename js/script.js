@@ -166,3 +166,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
     requestAnimationFrame(animateCarousel);
 });
+
+
+// shop by department
+// const images1 = [
+//   'images/shop_department/shop',
+//   'images/shop_department/shop_2',
+//   'images/shop_department/shop_3',
+//   'images/shop_department/shop_4',
+//   'images/shop_department/shop_5',
+//   'images/shop_department/shop_6',
+//   'images/shop_department/shop_7',
+//   'images/shop_department/shop_8',
+//   'images/shop_department/shop_9',
+//   'images/shop_department/shop_10',
+//   'images/shop_department/shop_11',
+//   'images/shop_department/shop_13'
+// ];
+
+// let imgIndex = 0;
+// const imgSrc = document.getElementById('shop_dept');
+
+// function startSlider(){
+//   setInterval( ()=>{
+//       if (imgIndex >= images.length) {
+//           imgIndex = 0;
+//       }
+//       const imgUrl = images[imgIndex];
+//       imgSrc.setAttribute('src', imgUrl);
+//       imgIndex++; 
+//   }, 1000);
+
+// };
+
+// function stopSlider(){
+//   location.reload();
+//   imgSrc.setAttribute('src', 'images/shop_department/shop')
+// }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const images1 = [
+    'images/shop_department/shop_1.jpg',
+    'images/shop_department/shop_2.jpg',
+    'images/shop_department/shop_3.jpg',
+    'images/shop_department/shop_4.jpg',
+    'images/shop_department/shop_5.jpg',
+    'images/shop_department/shop_6.jpg',
+    // ... other images
+  ];
+
+  // Assuming you have exactly as many img elements with class 'shop-dept-img' as there are images in the images1 array
+  const imgElements = document.querySelectorAll('.shop-dept-img');
+
+  // Assign an image from the array to each img element
+  imgElements.forEach((img, index) => {
+    // Make sure the index is within the bounds of the images1 array
+    if (index < images1.length) {
+      img.setAttribute('src', images1[index]);
+    }
+  });
+});

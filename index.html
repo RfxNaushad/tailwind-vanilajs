@@ -99,14 +99,14 @@
             <!-- Flex container -->
             <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
                 <!-- First column for categories -->
-                <div class="flex-auto bg-white p-4 rounded-lg md:w-1/5">
+                <div class="flex-1 bg-white p-4 rounded-lg md:w-1/5">
                     <ul id="category-list" class="space-y-2">
                         <!-- Categories will be inserted here by JavaScript -->
                     </ul>
                 </div>
 
                 <!-- Second column for feature area -->
-                <div class="flex-auto bg-white rounded-lg shadow md:w-1/2">
+                <div class="flex-2 bg-white rounded-lg shadow md:w-1/2">
                     <div class="container mx-auto">
                         <div
                             class="bg-gray-200 rounded-lg mb-4 relative inset-x-0 bg-gradient-to-t from-gray-900 to-transparent">
@@ -148,13 +148,7 @@
                                     aria-label="Logo Carousel">
                                     <div class="carousel-container whitespace-nowrap flex" id="carouselContainer"
                                         role="list">
-                                        <!-- <div class="inline-block carousel-item px-4" style="width: calc(100% / var(--items-per-page));">
-                                        <div class="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center mx-auto">
                                         
-                                          <img id="brandImage" src="images/Gondar.png" alt="logo" class="object-cover w-12 h-12 rounded-lg" />
-                                        </div>
-                                        <p class="text-xs text-center mt-2">Brand Name</p>
-                                      </div> -->
                                     </div>
                                 </div>
 
@@ -169,7 +163,7 @@
                 </div>
 
                 <!-- Third column for promotional offer -->
-                <div class="flex-auto bg-white shadow md:w-1/4 hidden md:block">
+                <div class="flex- bg-white shadow md:w-1/4 hidden md:block">
                     <div class="bg-white p-4">
                         <h2 class="text-gray-700 mb-6 text-xl font-semibold">
                             Good Afternoon, John Smith
@@ -192,10 +186,14 @@
                     </div>
                 </div>
 
-                <div></div>
+                
             </div>
 
-            <div class="bg-gray-100 py-4">
+
+
+            
+
+            <div class="backgroud_gray py-8">
                 <div class="flex justify-between items-center flex-wrap">
                     <!-- Item 1 -->
                     <div class="flex bg-white items-center p-2 pr-32">
@@ -240,6 +238,84 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <!-- shop by department area -->
+            <div class="backgroud_gray py-12">
+                <h2 class="text-start text-2xl mb-6">Shop by Department</h2>
+                
+                <!-- First Row -->
+                <div class="grid grid-cols-6 gap-4 mb-4">
+                  <!-- Repeat this div for each item in the first row -->
+                  <div class="flex flex-col items-center">
+                    <img class="shop-dept-img" src="" alt="Department Image 1">
+                    <p class="text-sm">Food</p>
+                  </div>
+                  <!-- ... other items for the first row -->
+                </div>
+                
+                <!-- Second Row -->
+                <div class="grid grid-cols-6 gap-4">
+                  <!-- Repeat this div for each item in the second row -->
+                  <div class="flex flex-col items-center">
+                    <img src="images/shop_department/shop_9.png" alt="Product 2" class="object-cover h-32 w-32 mb-2 rounded-md"/>
+                    <p class="text-sm">Minimal</p>
+                  </div>
+                  <!-- ... other items for the second row -->
+                </div>
+              </div>
+
+            <!-- deal of the day -->
+            <div class="bg-blue-100 p-6">
+                <h2 class="text-lg font-semibold mb-4">Deal of The Day</h2>
+                
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                  <!-- Product Column 1 -->
+                  <div class="bg-white rounded shadow p-4 flex flex-col justify-between">
+                    <img src="images/deal_of_the_day/image 44.png" alt="Wireless Bluetooth Headset" class="mb-3"/>
+                    <h3 class="text-md font-semibold">Wireless Bluetooth Headset Single Ear</h3>
+                    <!-- Rating Stars -->
+                    <div class="text-yellow-400 text-sm my-1">
+                      <!-- SVGs or Icons for stars -->
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</p>
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <span class="text-lg font-bold">$6</span>
+                        <span class="text-sm line-through text-gray-500 ml-1">$12</span>
+                      </div>
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add to Cart</button>
+                    </div>
+                  </div>
+                  
+                  <!-- Timer Column 2 -->
+                  <div class="bg-white rounded shadow p-4 flex items-center justify-center">
+                    <!-- Timer Content Here -->
+                    <div>
+                      <!-- Add Timer Here -->
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                  <!-- Product Column 1 -->
+                  <div class="bg-white rounded shadow p-4">
+                    <img src="path-to-sofa-image.jpg" alt="Wooden Sofa Aqua" class="w-full mb-3"/>
+                    <h3 class="text-md font-semibold mb-1">Wooden Sofa Aqua</h3>
+                    <p class="text-gray-600 text-sm mb-3">1-year warranty</p>
+                    <p class="text-lg font-bold">$279.99</p>
+                  </div>
+                  
+                  <!-- Product Column 2 -->
+                  <!-- Duplicate the product column for the second product -->
+                </div>
+                
+              </div>
+        
+
+
+
         </div>
     </main>
 
