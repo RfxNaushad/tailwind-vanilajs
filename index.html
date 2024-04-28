@@ -485,10 +485,19 @@
                     <p>Got Question? Call us 24/7</p>
                     <p class="font-semibold">+1 8438268436</p>
                     <p>Register now & get 10% offer from first order</p>
-                    <select class="mt-2 border border-blue-300 rounded">
-                        <option>English (USA)</option>
-                        <option>English (UK)</option>
-                    </select>
+
+                      <div class="relative">
+                        <select class="block appearance-none w-52 bg-white border border-blue-300 text-blue-600 py-1 px-3 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500 focus:ring">
+                            <option>English (USA)</option>
+                            <option>English (UK)</option>
+                            <option>Bangla</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-12 flex items-center px-2 text-gray-700">
+                          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M5.5 7l4.5 4.5L14.5 7z"/>
+                          </svg>
+                        </div>
+                      </div>
                 </div>
 
                 <!-- Middle three columns for links, collectively taking up 1/2 of the width -->
@@ -521,30 +530,30 @@
                 </div>
 
                 <!-- Fifth column for App download links, taking up 1/4 of the width -->
-                <div class="w-full md:w-1/4 flex flex-col items-center space-y-2">
+                <div class="w-full md:w-1/4 flex flex-col items-center space-y-2 relative">
                     <h3 class="font-bold mb-2">Download app</h3>
                     <div class="flex justify-center">
                         <a href="#" class="text-xs mb-1 mr-4">
-                            <img src="images/google.png" alt="Google Play" class="h-6" />
+                            <img src="images/google.png" alt="Google Play" class="h-8" />
                         </a>
                         <a href="#" class="text-xs ml-4">
-                            <img src="images/Badge.png" alt="App Store" class="h-6" />
+                            <img src="images/Badge.png" alt="App Store" class="h-8" />
                         </a>
                     </div>
 
-                    <div class="flex justify-center items-center mt-4 space-x-3">
-                        <a href="#" class="text-blue-600 hover:text-blue-800 text-xs">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 text-xs">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 text-xs">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 text-xs">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
+                    <div class="flex justify-center items-center mt-4 space-x-3 absolute bottom-0	">
+                        <a href="#facebook" class="text-blue-600">
+                            <i class="fab fa-facebook-f"></i> <!-- Use appropriate icon library -->
+                          </a>
+                          <a href="#instagram" class="text-purple-600">
+                            <i class="fab fa-instagram"></i> <!-- Use appropriate icon library -->
+                          </a>
+                          <a href="#twitter" class="text-blue-400">
+                            <i class="fab fa-twitter"></i> <!-- Use appropriate icon library -->
+                          </a>
+                          <a href="#linkedin" class="text-blue-500">
+                            <i class="fab fa-linkedin-in"></i> <!-- Use appropriate icon library -->
+                          </a>
                     </div>
                 </div>
             </div>
