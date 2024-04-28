@@ -311,38 +311,53 @@ shopCategory.forEach(product => {
 });
 
 // swiper
-const multiplier = {
-  translate: .1,
-  rotate: .01
-}
-
-new Swiper('.swiper', {
-  slidesPerView: 'auto',
-  spaceBetween: 90,
-  centeredSlides: true,
+let swiper = new Swiper(".mySwiper", {
+  slidesPerView: 6,
   loop: true,
-  grabCursor: true
-})
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 
-function calculateWheel() {
-  const slides = document.querySelectorAll('.single')
-  slides.forEach((slide, i) => {
-      const rect = slide.getBoundingClientRect()
-      const r = window.innerWidth * .5 - (rect.x + rect.width * .5)
-      let ty = Math.abs(r) * multiplier.translate - rect.width * multiplier.translate
+const swiperJs = [
+  { name: "images/on_selling/5.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/shop_department/shop_8.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/on_selling/4.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/on_selling/6.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/on_selling/3.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/shop_department/shop_13.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/on_selling/1.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/on_selling/2.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" },
+  { name: "images/on_selling/6.png", title: "Wireless Bluetooth Headset Single Ear Earplugs Ultra...", description: "Wireless Bluetooth Headset Single", price: "$8", originalPrice: "$16", discount: "-50%" }
+];
 
-      if (ty < 0) {
-          ty = 0
-      }
-      const transformOrigin = r < 0 ? 'left top' : 'right top'
-      slide.style.transform = `translate(0, ${ty}px) rotate(${-r * multiplier.rotate}deg)`
-      slide.style.transformOrigin = transformOrigin
-  })
-}
+const swiperWrapper = document.getElementById('swiper-wrapper');
 
-function raf() {
-  requestAnimationFrame(raf)
-  calculateWheel()
-}
-
-raf();
+swiperJs.forEach(product => {
+  const slideDiv = document.createElement('div');
+  slideDiv.className = "swiper-slide";
+  slideDiv.innerHTML = `
+    <div class="bg-white overflow-hidden shadow rounded-lg">
+      <img src="${product.name}" alt="${product.description}" class="w-full h-40 object-cover rounded-t-lg">
+      <div class="p-4">
+        <h3 class="text-sm font-semibold truncate">${product.title}</h3>
+        <div class="flex items-center my-1">
+          <div class="text-yellow-400 text-xs">★★★★★</div>
+          <span class="text-xs text-gray-600 ml-2">(121 Reviews)</span>
+        </div>
+        <div class="flex items-baseline">
+          <span class="text-lg font-bold">${product.price}</span>
+          <span class="text-sm line-through text-gray-500 ml-2">${product.originalPrice}</span>
+          <span class="ml-1 text-xs text-red-600 font-semibold">${product.discount}</span>
+        </div>
+      </div>
+    </div>
+  `;
+  swiperWrapper.appendChild(slideDiv);
+});

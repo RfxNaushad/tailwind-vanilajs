@@ -2,11 +2,20 @@
     height: 465px;
 }
 
-body {
-   background-color: #f1f0ee;
-}
+html, body {
+    height: 100%;
+  }
+  body {
+    background: #eee;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
 
 .backgroud_gray{
     background-color: #f1f0ee;
 }
 
+/* swiper */
