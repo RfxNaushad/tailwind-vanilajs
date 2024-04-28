@@ -251,3 +251,98 @@ shopImg3.forEach(product => {
   `;
   shopGrid3.appendChild(productDiv);
 });
+
+
+// Apple Items
+const apple = [
+  { name: "images/apple/0.png", icon: "Bleuets" },
+  { name: "images/apple/5.png", icon: "Anneth" },
+  { name: "images/apple/2.png", icon: "Aubergines" },
+  { name: "images/apple/6.png", icon: "Fraises" },
+  { name: "images/apple/4.png", icon: "Radis" },
+  { name: "images/apple/1.png", icon: "Fèves vertes" }
+];
+
+const shopGrid4 = document.getElementById('apple');
+apple.forEach(img => {
+  const appleDiv = document.createElement('div');
+  appleDiv.className = "flex flex-col items-center"; // Keeps your styling consistent
+  appleDiv.innerHTML = `<img class="w-60" src="${img.name}" alt="${img.icon}"/>
+  <p class="mt-4">${img.icon}</p>`;
+  shopGrid4.appendChild(appleDiv);
+});
+
+
+// shop by categories
+const shopCategory = [
+  { name: "images/shopCat/c1.png", title: "Portrait"},
+  { name: "images/shopCat/c2.png", title: "Space"},
+  { name: "images/shopCat/c3.png", title: "Texture"},
+  { name: "images/shopCat/c4.png", title: "Minimal"},
+  { name: "images/shopCat/c5.png", title: "Food"},
+  { name: "images/shopCat/c6.png", title: "Art"},
+  { name: "images/shopCat/c7.png", title: "Nature"},
+  { name: "images/shopCat/c8.png", title: "Colorful"},
+  { name: "images/shopCat/c2.png", title: "Interior"},
+  { name: "images/shopCat/c3.png", title: "Nature"},
+  { name: "images/shopCat/c3.png", title: "Texture"},
+  { name: "images/shopCat/c4.png", title: "Minimal"},
+  { name: "images/shopCat/c5.png", title: "Food"},
+  { name: "images/shopCat/c6.png", title: "Art"},
+  { name: "images/shopCat/c7.png", title: "Nature"}
+];
+
+const shopCat = document.getElementById('categories-grid');
+
+shopCategory.forEach(product => {
+  const catDiv = document.createElement('div');
+  catDiv.className = "bg-white overflow-hidden";
+  catDiv.innerHTML = `
+    <div class="flex flex-col md:flex-row">
+      <div class="flex-none">
+        <img class="mx-auto w-28	h-28 object-cover" src="${product.name}" alt="Product Image">
+      </div>
+      <div class="flex-3 p-4 content-center justify-center flex flex-col">
+      <h3 class="text-lg font-semibold">${product.title}</h3>
+      </div>
+    </div>
+  `;
+  shopCat.appendChild(catDiv);
+});
+
+// swiper
+const multiplier = {
+  translate: .1,
+  rotate: .01
+}
+
+new Swiper('.swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 90,
+  centeredSlides: true,
+  loop: true,
+  grabCursor: true
+})
+
+function calculateWheel() {
+  const slides = document.querySelectorAll('.single')
+  slides.forEach((slide, i) => {
+      const rect = slide.getBoundingClientRect()
+      const r = window.innerWidth * .5 - (rect.x + rect.width * .5)
+      let ty = Math.abs(r) * multiplier.translate - rect.width * multiplier.translate
+
+      if (ty < 0) {
+          ty = 0
+      }
+      const transformOrigin = r < 0 ? 'left top' : 'right top'
+      slide.style.transform = `translate(0, ${ty}px) rotate(${-r * multiplier.rotate}deg)`
+      slide.style.transformOrigin = transformOrigin
+  })
+}
+
+function raf() {
+  requestAnimationFrame(raf)
+  calculateWheel()
+}
+
+raf();
